@@ -1,0 +1,12 @@
+%h1 Analytics
+- @shorts.each do |short|
+	%p 
+		%b
+			= short.url 
+		%br
+		= DOMAIN+short.slug
+	Total clicks: 
+	= short.count
+	%br
+	Top countries: 
+	= short.countries.map{|c| c.country_name }.join(',')

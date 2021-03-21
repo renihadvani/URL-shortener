@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="6" skipped="0" failures="0" errors="0" time="0.937944" timestamp="2021-03-20T22:36:17+05:30" hostname="197blrnb25392">
+<properties>
+<property name="seed" value="40797"/>
+</properties>
+<testcase classname="spec.controllers.shorts_controller_spec" name="ShortsController GET /stats in shorts#index status 200: Return all short" file="./spec/controllers/shorts_controller_spec.rb" time="0.332659"></testcase>
+<testcase classname="spec.controllers.shorts_controller_spec" name="ShortsController GET /short/{id} in shorts#show status 200: Return short" file="./spec/controllers/shorts_controller_spec.rb" time="0.088896"></testcase>
+<testcase classname="spec.controllers.shorts_controller_spec" name="ShortsController GET /short/{id} in shorts#show status 404: Page not found" file="./spec/controllers/shorts_controller_spec.rb" time="0.050857"></testcase>
+<testcase classname="spec.controllers.shorts_controller_spec" name="ShortsController POST /short in shorts#create status 201: Return record created successfully" file="./spec/controllers/shorts_controller_spec.rb" time="0.066147"></testcase>
+<testcase classname="spec.models.country_spec" name="Country associations is expected to belong to short required: true" file="./spec/models/country_spec.rb" time="0.011370"></testcase>
+<testcase classname="spec.models.short_spec" name="Short associations is expected to have many countries" file="./spec/models/short_spec.rb" time="0.006663"></testcase>
+</testsuite>

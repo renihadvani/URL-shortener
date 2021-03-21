@@ -1,0 +1,42 @@
+%h1 Welcome to short.com
+
+Please enter your URL here 
+= form_for @short, as: :short do |f|
+	= f.text_field :url, class: "form-control", required: "true"
+	= f.button "SHORTEN", class: 'submit-btn', type: 'button'
+%br
+.short
+	Here's your short URL!
+	%br
+	= link_to "", "",class: "short_url"
+
+- content_for :javascript do
+	:javascript
+		$( document ).ready(function() {
+			$(".short").hide()
+			$('.submit-btn').on('click', function(){
+				url = $("#short_url").val()
+				if (url != ''){
+					$.ajax({
+			            type: 'POST',
+			            url: '/shorts' ,
+			            data: {
+			            	short: { url: url }
+			            },
+			            success: function(data){
+			              if (data.message == 'success'){
+			              	short_url = data.url
+			              	$(".short").show()
+			              	$(".short_url").attr('href',"/shorts/"+ data.id)
+			              	$(".short_url").html(short_url)
+			              }
+			            }
+			        });
+				}
+			    else {
+			    	alert("Please enter url")
+			    }
+
+			})
+		})
+
